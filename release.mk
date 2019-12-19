@@ -1204,7 +1204,8 @@ endif
 #
 # This is not a part of a default target. Upload should be triggered manually.
 # RELEASE_TAG and RELEASE_NAME mustbe set to something
-upload: $O/$(CHECKSUM_FILE)
+.PHONY: upload
+upload:
 	$(PYTHON) github/create-release.py --owner=foss-for-synopsys-dwc-arc-processors \
 	    --project=toolchain --tag=$(RELEASE_TAG) --draft \
 	    --release-id=$(RELEASE) \

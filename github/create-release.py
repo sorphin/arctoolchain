@@ -95,7 +95,7 @@ gh_conn = ghapi.GitHubApi(args.owner, args.project, args.oauth_token)
 release_id = gh_conn.create_release(args.tag, args.name, args.description,
         args.draft, args.prerelease)
 
-for asset in args.assets:
-    gh_conn.upload_asset(release_id, asset)
+# for asset in args.assets:
+#     gh_conn.upload_asset(release_id, asset)
 
 # vi: set expandtab sw=4:
