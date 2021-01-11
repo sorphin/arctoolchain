@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ret=$(${NSIM_HOME}/bin/nsimdrv -prop=nsim_isa_family=arc64 -prop=nsim_emt=1 -on=trace $1 | timeout 30s grep -E "mov[ \t]+r0,r0")
+ret=$(${NSIM_HOME}/bin/nsimdrv -prop=nsim_isa_family=arc64 -prop=nsim_hlink_gnu_io_ext=1 -on=trace $1 | timeout 30s grep -E "mov[ \t]+r0,r0")
 if [ $? -eq 124 ]
 then
   #echo "Timeout!!!!"

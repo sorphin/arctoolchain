@@ -52,7 +52,7 @@ proc arc_get_cflags {} {
     if { ![info exists env(ARC_HOSTLINK_LIBRARY)] } {
 	if [board_info $board exists arc,hostlink] {
 	    if { [board_info $board arc,hostlink] == "nsim" } {
-		lappend cflags --specs=nsim.specs
+		lappend cflags --specs=hl.specs
 	    } else {
 		lappend cflags --specs=nosys.specs
 	    }
